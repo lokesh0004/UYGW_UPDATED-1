@@ -75,12 +75,17 @@ export default function Hero() {
       ScrollTrigger.create({
         trigger: el, start: "top 90%", once: true,
         onEnter: () => {
-          gsap.fromTo({ v: 0 }, { v: end, duration: 2.5, ease: "power2.out",
-            onUpdate: function () {
-              const val = dec ? this.targets()[0].v.toFixed(dec) : Math.round(this.targets()[0].v);
-              el.textContent = val + suffix;
-            }
-          });
+         const obj = { v: 0 };
+gsap.fromTo(obj,
+  { v: 0 },
+  {
+    v: end, duration: 2.5, ease: "power2.out",
+    onUpdate: () => {
+      const val = dec ? obj.v.toFixed(dec) : Math.round(obj.v);
+      el.textContent = val + suffix;
+    },
+  }
+);
         }
       });
     });
