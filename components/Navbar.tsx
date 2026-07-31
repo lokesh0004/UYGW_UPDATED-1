@@ -29,8 +29,8 @@ export default function Navbar() {
     <nav ref={ref} className="fixed top-0 w-full z-50 flex items-center justify-between px-8 md:px-16 py-4 backdrop-blur-2xl border-b border-indigo-500/10 transition-all duration-300" style={{ visibility: "hidden", background: "rgba(5,11,31,0.6)" }}>
       {/* Logo */}
       <div className="font-['Clash_Display'] text-2xl font-bold tracking-tight">
-        <span className="text-white">Code</span>
-        <span className="text-gradient-indigo">Hub</span>
+        <span className="text-white">UY</span>
+        <span className="text-gradient-indigo">GW</span>
       </div>
 
       {/* Links */}
