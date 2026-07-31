@@ -146,24 +146,24 @@ gsap.fromTo(obj,
           {/* Heading lines */}
           <div className="overflow-hidden mb-1">
             <div className="hero-line font-['Clash_Display'] text-5xl md:text-6xl lg:text-[80px] font-bold text-white leading-none tracking-tight">
-              Master Any
+              Beyond Grades
             </div>
           </div>
           <div className="overflow-hidden mb-1">
             <div className="hero-line font-['Clash_Display'] text-5xl md:text-6xl lg:text-[80px] font-bold leading-none tracking-tight text-gradient-indigo">
-              Skill. Fast.
+              The UYGW
             </div>
           </div>
           <div className="overflow-hidden mb-8">
             <div className="hero-line font-['Clash_Display'] text-5xl md:text-6xl lg:text-[80px] font-bold text-white leading-none tracking-tight">
-              Build Your Future.
+              Learning Journey.
             </div>
           </div>
 
           {/* Sub */}
           <p className="hero-sub text-slate-300 text-lg md:text-xl leading-relaxed max-w-xl mb-10"
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}>
-            Expert-crafted courses in tech, design & business. Taught by India's top professionals. Start your transformation today — free.
+            MORE THAN A LEARNING CENTRE.A PLACE WHERE CONFIDENCE IS BUILT.
           </p>
 
           {/* Buttons */}
