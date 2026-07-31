@@ -30,7 +30,7 @@ export default function Navbar() {
       {/* Logo */}
       <div className="font-['Clash_Display'] text-2xl font-bold tracking-tight">
         <span className="text-white">UYGW</span>
-        <span className="text-gradient-indigo">Education</span>
+        <span className="text-gradient-emerald">Education</span>
       </div>
 
       {/* Links */}
