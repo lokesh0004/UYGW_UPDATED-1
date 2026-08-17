@@ -7,7 +7,6 @@ export default function WhatsAppPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
 
-  // Change this to your client's WhatsApp number
   const phoneNumber = "919876543210";
 
   useEffect(() => {
@@ -32,7 +31,8 @@ export default function WhatsAppPopup() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition hover:scale-110"
+        className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full text-white shadow-xl transition hover:scale-110"
+        style={{ background: "var(--forest-light)" }}
       >
         <MessageCircle size={30} />
       </button>
@@ -40,15 +40,18 @@ export default function WhatsAppPopup() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-[350px] overflow-hidden rounded-3xl bg-white shadow-2xl">
-
+    <div
+      className="fixed bottom-6 right-6 z-50 w-[350px] overflow-hidden rounded-3xl shadow-2xl"
+      style={{ background: "var(--void)" }}
+    >
       {/* Header */}
-      <div className="flex items-center justify-between bg-[#25D366] px-5 py-4 text-white">
+      <div
+        className="flex items-center justify-between px-5 py-4 text-white"
+        style={{ background: "linear-gradient(135deg, var(--forest-light), var(--forest))" }}
+      >
         <div>
           <h3 className="font-semibold text-lg">Chat with us 👋</h3>
-          <p className="text-sm opacity-90">
-            We usually reply within minutes
-          </p>
+          <p className="text-sm opacity-90">We usually reply within minutes</p>
         </div>
 
         <button onClick={() => setIsOpen(false)}>
@@ -58,16 +61,19 @@ export default function WhatsAppPopup() {
 
       {/* Chat Body */}
       <div
-        className="space-y-4 bg-[#ECE5DD] p-5"
+        className="space-y-4 p-5"
         style={{
+          background: "var(--surface-2)",
           backgroundImage:
             "url('https://www.transparenttextures.com/patterns/diamond-upholstery.png')",
         }}
       >
-        <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-white p-3 shadow">
-          <p className="text-sm">
+        <div
+          className="max-w-[85%] rounded-2xl rounded-tl-sm p-3 shadow"
+          style={{ background: "#FFFFFF" }}
+        >
+          <p className="text-sm" style={{ color: "var(--text)" }}>
             👋 Hi! Welcome.
-
             <br />
             How can we help you today?
           </p>
@@ -78,12 +84,20 @@ export default function WhatsAppPopup() {
           placeholder="Type your message..."
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full resize-none rounded-xl border p-3 outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full resize-none rounded-xl border p-3 outline-none focus:ring-2"
+          style={{
+            background: "#FFFFFF",
+            color: "var(--text)",
+            borderColor: "rgba(46,139,87,0.25)",
+          }}
         />
 
         <button
           onClick={sendMessage}
-          className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3 font-semibold text-white transition hover:bg-[#1ebd5a]"
+          className="flex w-full items-center justify-center gap-2 rounded-xl py-3 font-semibold text-white transition"
+          style={{ background: "var(--forest-light)" }}
+          onMouseEnter={(e) => (e.currentTarget.style.background = "var(--forest)")}
+          onMouseLeave={(e) => (e.currentTarget.style.background = "var(--forest-light)")}
         >
           <Send size={18} />
           Send on WhatsApp

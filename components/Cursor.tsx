@@ -20,11 +20,11 @@ export default function Cursor() {
     // Scale on hover
     document.querySelectorAll("a, button, .hoverable").forEach(el => {
       el.addEventListener("mouseenter", () => {
-        gsap.to(ring, { scale: 1.8, borderColor: "#F59E0B", duration: 0.3 });
+        gsap.to(ring, { scale: 1.8, borderColor: "#D4AF37", duration: 0.3 });
         gsap.to(dot, { scale: 0, duration: 0.2 });
       });
       el.addEventListener("mouseleave", () => {
-        gsap.to(ring, { scale: 1, borderColor: "rgba(99,102,241,0.5)", duration: 0.3 });
+        gsap.to(ring, { scale: 1, borderColor: "rgba(46,139,87,0.4)", duration: 0.3 });
         gsap.to(dot, { scale: 1, duration: 0.2 });
       });
     });

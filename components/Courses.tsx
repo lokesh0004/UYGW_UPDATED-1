@@ -20,7 +20,6 @@ export default function Courses() {
       y: 40, opacity: 0, duration: 0.8, ease: "power3.out",
     });
 
-    // Horizontal scroll on pinned section
     const track = trackRef.current;
     if (!track) return;
     const totalWidth = track.scrollWidth - track.parentElement!.clientWidth;
@@ -38,14 +37,12 @@ export default function Courses() {
       },
     });
 
-    // Cards fade in as they enter
     gsap.utils.toArray<HTMLElement>(".course-card").forEach((card, i) => {
       gsap.from(card, {
         y: 30, opacity: 0, duration: 0.5, delay: i * 0.08, ease: "power2.out",
         scrollTrigger: { trigger: ".courses-scroll-container", start: "top 80%", once: true },
       });
 
-      // 3D tilt on hover
       card.addEventListener("mousemove", (e: MouseEvent) => {
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
@@ -61,24 +58,38 @@ export default function Courses() {
   }, { scope: ref });
 
   return (
-    <section ref={ref} className="relative" style={{ background: "#050B1F" }}>
+    <section ref={ref} className="relative" style={{ background: "var(--void)" }}>
       {/* Header */}
       <div className="courses-heading px-8 md:px-16 pt-24 pb-12">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-8">
           <div>
-            <span className="block text-xs font-bold tracking-[4px] uppercase text-indigo-400 mb-3">Courses</span>
-            <h2 className="font-['Clash_Display'] text-4xl md:text-5xl font-bold text-white">
+            <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: "var(--forest-light)" }}>
+              Courses
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "var(--text)" }}>
               Top <span className="text-gradient-gold">Picks</span> For You
             </h2>
           </div>
           <div className="flex gap-2 flex-wrap">
             {tabs.map(t => (
-              <button key={t} onClick={() => setActive(t)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 ${
+              <button
+                key={t}
+                onClick={() => setActive(t)}
+                className="px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 glass border"
+                style={
                   active === t
-                    ? "bg-indigo-600 text-white shadow-[0_0_20px_rgba(99,102,241,0.4)]"
-                    : "glass border border-slate-700/50 text-slate-400 hover:border-indigo-500/50 hover:text-white"
-                }`}>
+                    ? {
+                        background: "var(--forest-light)",
+                        color: "#FFFFFF",
+                        borderColor: "var(--forest-light)",
+                        boxShadow: "0 0 20px rgba(46,139,87,0.35)",
+                      }
+                    : {
+                        color: "var(--muted)",
+                        borderColor: "rgba(46,139,87,0.2)",
+                      }
+                }
+              >
                 {t}
               </button>
             ))}
@@ -92,18 +103,23 @@ export default function Courses() {
         <div className="h-full flex items-center pl-8 md:pl-16">
           <div ref={trackRef} className="h-scroll-wrapper flex gap-6" style={{ willChange: "transform" }}>
             {courses.map((c) => (
-              <div key={c.id} className="course-card relative flex-shrink-0 w-[320px] glass rounded-3xl overflow-hidden border border-slate-700/30 hover:border-indigo-500/40 transition-colors duration-300 hoverable"
-                style={{ transformStyle: "preserve-3d" }}>
-
+              <div
+                key={c.id}
+                className="course-card relative flex-shrink-0 w-[320px] glass rounded-3xl overflow-hidden border hoverable"
+                style={{ transformStyle: "preserve-3d", borderColor: "rgba(46,139,87,0.15)" }}
+              >
                 {/* Shine */}
-                <div className="card-shine absolute inset-0 z-10 pointer-events-none opacity-0 rounded-3xl"
-                  style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.6) 0%, transparent 60%)" }} />
+                <div
+                  className="card-shine absolute inset-0 z-10 pointer-events-none opacity-0 rounded-3xl"
+                  style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.6) 0%, transparent 60%)" }}
+                />
 
                 {/* Thumb */}
-                <div className={`h-48 bg-gradient-to-br ${c.grad} flex items-center justify-center text-5xl relative overflow-hidden`}>
-                  <div className="absolute inset-0 opacity-20"
-                    style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
-                  {c.emoji}
+                <div className={`h-48 bg-gradient-to-br ${c.grad} flex items-center justify-center relative overflow-hidden`}>
+                  <div
+                    className="absolute inset-0 opacity-20"
+                    style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "20px 20px" }}
+                  />
                   {c.badge && (
                     <span className={`absolute top-3 left-3 ${c.badgeCls} text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider`}>
                       {c.badge}
@@ -116,30 +132,26 @@ export default function Courses() {
                     <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ background: c.color }}>
                       {c.initials}
                     </div>
-                    <span className="text-slate-400 text-xs">{c.instructor}</span>
-                    <span className="ml-auto text-[10px] text-indigo-400 font-semibold bg-indigo-500/10 px-2 py-0.5 rounded-full border border-indigo-500/20">{c.category}</span>
+                    <span className="text-xs" style={{ color: "var(--muted)" }}>{c.instructor}</span>
+                    <span
+                      className="ml-auto text-[10px] font-semibold px-2 py-0.5 rounded-full border"
+                      style={{ color: "var(--forest-light)", background: "rgba(46,139,87,0.08)", borderColor: "rgba(46,139,87,0.2)" }}
+                    >
+                      {c.category}
+                    </span>
                   </div>
 
-                  <h3 className="font-['Clash_Display'] text-base font-bold text-white leading-snug mb-3">{c.title}</h3>
+                  <h3 className="text-base font-bold leading-snug mb-3" style={{ color: "var(--text)" }}>{c.title}</h3>
 
-                  <div className="flex gap-3 text-slate-500 text-xs mb-4">
-                    <span>⏱ {c.hours}h</span>
-                    <span>📚 {c.lessons}</span>
-                    {c.price === 0 ? <span className="text-emerald-400">🆓 Free</span> : <span>🏆 Cert</span>}
+                  <div className="flex gap-3 text-xs mb-4" style={{ color: "var(--muted)" }}>
+                    <span>{c.hours}h</span>
+                    <span>{c.lessons}</span>
                   </div>
 
-                  <div className="flex items-center justify-between pt-3.5 border-t border-slate-700/50">
-                    {c.price === 0 ? (
-                      <span className="font-['Clash_Display'] text-xl font-bold text-emerald-400">FREE</span>
-                    ) : (
-                      <div>
-                        <span className="font-['Clash_Display'] text-xl font-bold text-white">₹{c.price}</span>
-                        {c.original && <span className="text-slate-600 text-sm line-through ml-1.5">₹{c.original}</span>}
-                      </div>
-                    )}
+                  <div className="flex items-center justify-between pt-3.5 border-t" style={{ borderColor: "rgba(46,139,87,0.15)" }}>
                     <div className="flex items-center gap-1">
-                      <span className="text-amber-400 text-sm">{"★".repeat(c.rating)}</span>
-                      <span className="text-slate-500 text-xs">({c.reviews.toLocaleString()})</span>
+                      <span className="text-sm" style={{ color: "var(--gold)" }}>{"★".repeat(c.rating)}</span>
+                      <span className="text-xs" style={{ color: "var(--muted)" }}>({c.reviews.toLocaleString()})</span>
                     </div>
                   </div>
                 </div>
@@ -147,13 +159,23 @@ export default function Courses() {
             ))}
 
             {/* CTA Card at end */}
-            <div className="flex-shrink-0 w-[280px] rounded-3xl border border-indigo-500/20 flex flex-col items-center justify-center p-10 text-center hoverable"
-              style={{ background: "linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.03))" }}>
-              <div className="text-5xl mb-4">🚀</div>
-              <h3 className="font-['Clash_Display'] text-xl font-bold text-white mb-3">1,200+ More Courses</h3>
-              <p className="text-slate-400 text-sm mb-6">Explore the full catalog and find your perfect match.</p>
-              <button className="px-6 py-3 rounded-xl text-white font-semibold text-sm"
-                style={{ background: "linear-gradient(135deg, #6366F1, #4F46E5)", boxShadow: "0 4px 20px rgba(99,102,241,0.4)" }}>
+            <div
+              className="flex-shrink-0 w-[280px] rounded-3xl border flex flex-col items-center justify-center p-10 text-center hoverable"
+              style={{
+                background: "linear-gradient(135deg, rgba(46,139,87,0.1), rgba(46,139,87,0.03))",
+                borderColor: "rgba(46,139,87,0.2)",
+              }}
+            >
+              <h3 className="text-xl font-bold mb-3" style={{ color: "var(--text)" }}>1,200+ More Courses</h3>
+              <p className="text-sm mb-6" style={{ color: "var(--muted)" }}>Explore the full catalog and find your perfect match.</p>
+              <button
+                className="px-6 py-3 rounded-xl font-semibold text-sm"
+                style={{
+                  background: "linear-gradient(135deg, var(--forest-light), var(--forest))",
+                  color: "#FFFFFF",
+                  boxShadow: "0 4px 20px rgba(46,139,87,0.35)",
+                }}
+              >
                 View All Courses
               </button>
             </div>
