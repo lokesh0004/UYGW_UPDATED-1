@@ -56,6 +56,7 @@ export default function ContactForm() {
 
   return (
     <section
+      id="contact"
       className="px-8 md:px-16 py-28 relative overflow-hidden"
       style={{ background: "var(--void)" }}
     >
