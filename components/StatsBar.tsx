@@ -47,7 +47,7 @@ export default function StatsBar() {
       </div>
       <div className="section-divider" />
       <p className="text-center text-xs py-2 tracking-widest uppercase" style={{ color: "var(--muted)" }}>
-        Trusted by employees at
+        What We Teach 
       </p>
     </div>
   );
