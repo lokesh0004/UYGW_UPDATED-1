@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const brands = ["Google","Microsoft","Amazon","Flipkart","Swiggy","Razorpay","Zomato","CRED"];
+const brands = ["English","Mathematics","Science","Legal Studies","Economics","Accounting","Music","French","German"," Ethical AI","Spanish","Computer Science","Biology","Chemistry","Physics"];
 
 export default function StatsBar() {
   const ref = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export default function StatsBar() {
     const marquee = document.querySelector<HTMLElement>(".marquee-track");
     if (marquee) {
       const w = marquee.scrollWidth / 2;
-      gsap.to(marquee, { x: -w, duration: 20, repeat: -1, ease: "none" });
+      gsap.to(marquee, { x: -w, duration: 40, repeat: -1, ease: "none" });
     }
   }, { scope: ref });
 
