@@ -4,7 +4,6 @@ export const courses = [
   { id:3, title:"Arts", instructor:"Vikram Mehta", initials:"VM", color:"#F59E0B", emoji:"🎨", grad:"from-amber-500 to-orange-900", badge:"New", badgeCls:"bg-emerald-500", hours:35, lessons:162, price:799, original:2999, rating:4, reviews:2918, category:"Design" },
   { id:4, title:"Tech", instructor:"Neha Khanna", initials:"NK", color:"#F59E0B", emoji:"☁️", grad:"from-orange-500 to-red-900", hours:64, lessons:290, price:1499, original:5999, rating:5, reviews:5441, category:"DevOps" },
   { id:5, title:"Languages", instructor:"Suresh Patel", initials:"SP", color:"#22C55E", emoji:"📊", grad:"from-green-600 to-teal-900", badge:"Free", badgeCls:"bg-green-500", hours:18, lessons:72, price:0, rating:4, reviews:11203, category:"Data" },
-  { id:6, title:"Ethical Hacking & Cybersecurity — CEH", instructor:"Mohit Rao", initials:"MR", color:"#EF4444", emoji:"🔐", grad:"from-red-600 to-rose-900", hours:50, lessons:215, price:1199, original:4499, rating:5, reviews:3672, category:"Security" },
 ];
 
 export const instructors = [

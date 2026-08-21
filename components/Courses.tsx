@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import { courses } from "@/data";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -103,63 +104,64 @@ export default function Courses() {
         <div className="h-full flex items-center pl-8 md:pl-16">
           <div ref={trackRef} className="h-scroll-wrapper flex gap-6" style={{ willChange: "transform" }}>
             {courses.map((c) => (
-              <div
-                key={c.id}
-                className="course-card relative flex-shrink-0 w-[320px] glass rounded-3xl overflow-hidden border hoverable"
-                style={{ transformStyle: "preserve-3d", borderColor: "rgba(46,139,87,0.15)" }}
-              >
-                {/* Shine */}
+              <Link key={c.id} href={`/courses/${c.id}`} className="block flex-shrink-0">
                 <div
-                  className="card-shine absolute inset-0 z-10 pointer-events-none opacity-0 rounded-3xl"
-                  style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.6) 0%, transparent 60%)" }}
-                />
-
-                {/* Thumb */}
-                <div className={`h-48 bg-gradient-to-br ${c.grad} flex items-center justify-center relative overflow-hidden`}>
+                  className="course-card relative w-[320px] glass rounded-3xl overflow-hidden border hoverable"
+                  style={{ transformStyle: "preserve-3d", borderColor: "rgba(46,139,87,0.15)" }}
+                >
+                  {/* Shine */}
                   <div
-                    className="absolute inset-0 opacity-20"
-                    style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "20px 20px" }}
+                    className="card-shine absolute inset-0 z-10 pointer-events-none opacity-0 rounded-3xl"
+                    style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.6) 0%, transparent 60%)" }}
                   />
-                  {c.badge && (
-                    <span className={`absolute top-3 left-3 ${c.badgeCls} text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider`}>
-                      {c.badge}
-                    </span>
-                  )}
-                </div>
 
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ background: c.color }}>
-                      {c.initials}
+                  {/* Thumb */}
+                  <div className={`h-48 bg-gradient-to-br ${c.grad} flex items-center justify-center relative overflow-hidden`}>
+                    <div
+                      className="absolute inset-0 opacity-20"
+                      style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "20px 20px" }}
+                    />
+                    {c.badge && (
+                      <span className={`absolute top-3 left-3 ${c.badgeCls} text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider`}>
+                        {c.badge}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ background: c.color }}>
+                        {c.initials}
+                      </div>
+                      <span className="text-xs" style={{ color: "var(--muted)" }}>{c.instructor}</span>
+                      <span
+                        className="ml-auto text-[10px] font-semibold px-2 py-0.5 rounded-full border"
+                        style={{ color: "var(--forest-light)", background: "rgba(46,139,87,0.08)", borderColor: "rgba(46,139,87,0.2)" }}
+                      >
+                        {c.category}
+                      </span>
                     </div>
-                    <span className="text-xs" style={{ color: "var(--muted)" }}>{c.instructor}</span>
-                    <span
-                      className="ml-auto text-[10px] font-semibold px-2 py-0.5 rounded-full border"
-                      style={{ color: "var(--forest-light)", background: "rgba(46,139,87,0.08)", borderColor: "rgba(46,139,87,0.2)" }}
-                    >
-                      {c.category}
-                    </span>
-                  </div>
 
-                  <h3 className="text-base font-bold leading-snug mb-3" style={{ color: "var(--text)" }}>{c.title}</h3>
+                    <h3 className="text-base font-bold leading-snug mb-3" style={{ color: "var(--text)" }}>{c.title}</h3>
 
-                  <div className="flex gap-3 text-xs mb-4" style={{ color: "var(--muted)" }}>
-                    <span>{c.hours}h</span>
-                    <span>{c.lessons}</span>
-                  </div>
+                    <div className="flex gap-3 text-xs mb-4" style={{ color: "var(--muted)" }}>
+                      <span>{c.hours}h</span>
+                      <span>{c.lessons}</span>
+                    </div>
 
-                  <div className="flex items-center justify-between pt-3.5 border-t" style={{ borderColor: "rgba(46,139,87,0.15)" }}>
-                    <div className="flex items-center gap-1">
-                      <span className="text-sm" style={{ color: "var(--gold)" }}>{"★".repeat(c.rating)}</span>
-                      <span className="text-xs" style={{ color: "var(--muted)" }}>({c.reviews.toLocaleString()})</span>
+                    <div className="flex items-center justify-between pt-3.5 border-t" style={{ borderColor: "rgba(46,139,87,0.15)" }}>
+                      <div className="flex items-center gap-1">
+                        <span className="text-sm" style={{ color: "var(--gold)" }}>{"★".repeat(c.rating)}</span>
+                        <span className="text-xs" style={{ color: "var(--muted)" }}>({c.reviews.toLocaleString()})</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
 
             {/* CTA Card at end */}
-            <div
+            {/* <div
               className="flex-shrink-0 w-[280px] rounded-3xl border flex flex-col items-center justify-center p-10 text-center hoverable"
               style={{
                 background: "linear-gradient(135deg, rgba(46,139,87,0.1), rgba(46,139,87,0.03))",
@@ -178,7 +180,7 @@ export default function Courses() {
               >
                 View All Courses
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
