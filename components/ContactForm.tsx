@@ -36,7 +36,7 @@ export default function ContactForm() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const whatsappNumber = "919910488350";
+    const whatsappNumber = "+61401533346"; // Replace with your WhatsApp number
 
     const message = `New Enquiry:%0AStudent Name: ${formData.studentName}%0AEmail: ${formData.email}%0AParent Name: ${formData.parentName}%0AContact No: ${countryCode} ${formData.contactNo}`;
 

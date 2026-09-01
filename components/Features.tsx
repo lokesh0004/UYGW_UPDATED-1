@@ -7,7 +7,7 @@ export default function Features() {
     <section className="relative px-8 md:px-16 py-28" style={{ background: "var(--void)" }}>
       <div className="text-center mb-20">
         <span className="inline-block text-xs font-bold tracking-[4px] uppercase mb-4" style={{ color: "var(--forest-light)" }}>
-          Why LearnOva
+          Why UYGW
         </span>
         <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "var(--text)" }}>
           Built for <span className="text-gradient-indigo">Real Growth</span>

@@ -7,7 +7,7 @@ export default function WhatsAppPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
 
-  const phoneNumber = "919876543210";
+  const phoneNumber = "+61401533346"; // Replace with your WhatsApp number
 
   useEffect(() => {
     const timer = setTimeout(() => {
