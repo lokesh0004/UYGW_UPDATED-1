@@ -33,6 +33,13 @@ body {
   cursor: none;
 }
 
+/* Mobile/touch devices pe native cursor wapas laao */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto !important;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
 }
