@@ -1,9 +1,9 @@
 export const courses = [
-  { id:1, title:"Academics", instructor:"Rahul Sharma", initials:"RS", color:"#6366F1", emoji:"⚛️", grad:"from-indigo-600 to-indigo-900", badge:"Bestseller", badgeCls:"bg-indigo-500", hours:42, lessons:186, price:999, original:3999, rating:5, reviews:4821, category:"Web Dev" },
-  { id:2, title:"Sports", instructor:"Ananya Kapoor", initials:"AK", color:"#00D4FF", emoji:"🤖", grad:"from-cyan-600 to-blue-900", badge:"Hot 🔥", badgeCls:"bg-red-500", hours:58, lessons:240, price:1299, original:4999, rating:5, reviews:7203, category:"AI & ML" },
-  { id:3, title:"Arts", instructor:"Vikram Mehta", initials:"VM", color:"#F59E0B", emoji:"🎨", grad:"from-amber-500 to-orange-900", badge:"New", badgeCls:"bg-emerald-500", hours:35, lessons:162, price:799, original:2999, rating:4, reviews:2918, category:"Design" },
-  { id:4, title:"Tech", instructor:"Neha Khanna", initials:"NK", color:"#F59E0B", emoji:"☁️", grad:"from-orange-500 to-red-900", hours:64, lessons:290, price:1499, original:5999, rating:5, reviews:5441, category:"DevOps" },
-  { id:5, title:"Languages", instructor:"Suresh Patel", initials:"SP", color:"#22C55E", emoji:"📊", grad:"from-green-600 to-teal-900", badge:"Free", badgeCls:"bg-green-500", hours:18, lessons:72, price:0, rating:4, reviews:11203, category:"Data" },
+  { id:1, title:"Academics", instructor:"Rahul Sharma", initials:"RS", color:"#6366F1", emoji:"⚛️", grad:"from-indigo-600 to-indigo-900", badge:"Bestseller", badgeCls:"bg-indigo-500", hours:42, lessons:186, price:999, original:3999, rating:5, reviews:4821, category:"" },
+  { id:2, title:"Sports", instructor:"Ananya Kapoor", initials:"AK", color:"#00D4FF", emoji:"🤖", grad:"from-cyan-600 to-blue-900", badge:"Hot 🔥", badgeCls:"bg-red-500", hours:58, lessons:240, price:1299, original:4999, rating:5, reviews:7203, category:"" },
+  { id:3, title:"Arts", instructor:"Vikram Mehta", initials:"VM", color:"#F59E0B", emoji:"🎨", grad:"from-amber-500 to-orange-900", badge:"New", badgeCls:"bg-emerald-500", hours:35, lessons:162, price:799, original:2999, rating:4, reviews:2918, category:"" },
+  { id:4, title:"Tech", instructor:"Neha Khanna", initials:"NK", color:"#F59E0B", emoji:"☁️", grad:"from-orange-500 to-red-900", hours:64, lessons:290, price:1499, original:5999, rating:5, reviews:5441, category:"" },
+  { id:5, title:"Languages", instructor:"Suresh Patel", initials:"SP", color:"#22C55E", emoji:"📊", grad:"from-green-600 to-teal-900", badge:"Free", badgeCls:"bg-green-500", hours:18, lessons:72, price:0, rating:4, reviews:11203, category:"" },
 ];
 
 export const instructors = [
