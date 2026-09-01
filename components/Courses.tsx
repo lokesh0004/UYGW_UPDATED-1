@@ -20,18 +20,18 @@ export default function Courses() {
 
     const track = trackRef.current;
     if (!track) return;
-    const totalWidth = track.scrollWidth - track.parentElement!.clientWidth;
 
     gsap.to(track, {
-      x: -totalWidth,
+      x: () => -(track.scrollWidth - track.parentElement!.clientWidth),
       ease: "none",
       scrollTrigger: {
         trigger: ".courses-scroll-container",
         start: "top top",
-        end: () => `+=${totalWidth}`,
+        end: () => `+=${track.scrollWidth - track.parentElement!.clientWidth}`,
         scrub: 1,
         pin: true,
         anticipatePin: 1,
+        invalidateOnRefresh: true,
       },
     });
 
@@ -84,13 +84,10 @@ export default function Courses() {
                   className="course-card relative w-[320px] glass rounded-3xl overflow-hidden border hoverable"
                   style={{ transformStyle: "preserve-3d", borderColor: "rgba(46,139,87,0.15)" }}
                 >
-                  {/* Shine */}
                   <div
                     className="card-shine absolute inset-0 z-10 pointer-events-none opacity-0 rounded-3xl"
                     style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.6) 0%, transparent 60%)" }}
                   />
-
-                  {/* Thumb */}
                   <div className={`h-48 bg-gradient-to-br ${c.grad} flex items-center justify-center relative overflow-hidden`}>
                     <div
                       className="absolute inset-0 opacity-20"
@@ -102,7 +99,6 @@ export default function Courses() {
                       </span>
                     )}
                   </div>
-
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-3">
                       <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ background: c.color }}>
@@ -116,14 +112,11 @@ export default function Courses() {
                         {c.category}
                       </span>
                     </div>
-
                     <h3 className="text-base font-bold leading-snug mb-3" style={{ color: "var(--text)" }}>{c.title}</h3>
-
                     <div className="flex gap-3 text-xs mb-4" style={{ color: "var(--muted)" }}>
                       <span>{c.hours}h</span>
                       <span>{c.lessons}</span>
                     </div>
-
                     <div className="flex items-center justify-between pt-3.5 border-t" style={{ borderColor: "rgba(46,139,87,0.15)" }}>
                       <div className="flex items-center gap-1">
                         <span className="text-sm" style={{ color: "var(--gold)" }}>{"★".repeat(c.rating)}</span>
