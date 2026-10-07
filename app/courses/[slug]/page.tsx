@@ -94,15 +94,16 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 {discount}% off
               </p>
             )}
-            <button
-              className="w-full py-3 rounded-xl font-semibold text-sm text-white"
+            <Link
+              href="/#enquiry"
+              className="block text-center w-full py-3 rounded-xl font-semibold text-sm text-white"
               style={{
                 background: "linear-gradient(135deg, var(--forest-light), var(--forest))",
                 boxShadow: "0 4px 20px rgba(46,139,87,0.35)",
               }}
             >
               Enroll Now
-            </button>
+            </Link>
           </div>
         </div>
       </main>
@@ -152,7 +153,7 @@ function CategoryPageShell({
               {primaryLabel}
             </Link>
             <Link
-              href="/contact"
+              href="/#enquiry"
               className="px-6 py-3 rounded-xl font-semibold text-sm border"
               style={{ color: "var(--text)", borderColor: "rgba(46,139,87,0.3)" }}
             >
@@ -168,7 +169,7 @@ function CategoryPageShell({
             Ready to get started?
           </h2>
           <Link
-            href="/contact"
+            href="/#enquiry"
             className="inline-block px-8 py-3 rounded-xl font-semibold text-sm text-white"
             style={{ background: "linear-gradient(135deg, var(--forest-light), var(--forest))", boxShadow: "0 4px 20px rgba(46,139,87,0.35)" }}
           >
@@ -221,14 +222,14 @@ function AcademicsPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/academics/coaching"
+              href="/#enquiry"
               className="px-6 py-3 rounded-xl font-semibold text-sm text-white"
               style={{ background: "linear-gradient(135deg, var(--forest-light), var(--forest))", boxShadow: "0 4px 20px rgba(46,139,87,0.35)" }}
             >
               Explore Academic Coaching
             </Link>
             <Link
-              href="/contact"
+              href="/#enquiry"
               className="px-6 py-3 rounded-xl font-semibold text-sm border"
               style={{ color: "var(--text)", borderColor: "rgba(46,139,87,0.3)" }}
             >
@@ -257,7 +258,7 @@ function AcademicsPage() {
           ]}
         />
         <div className="text-center -mt-16 mb-24">
-          <Link href="/academics/coaching" className="text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
+          <Link href="/#enquiry" className="text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
             Explore Academic Coaching →
           </Link>
         </div>
@@ -274,7 +275,7 @@ function AcademicsPage() {
                 </span>
               ))}
           </p>
-          <Link href="/academics/subjects" className="inline-block mt-6 text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
+          <Link href="/#enquiry" className="inline-block mt-6 text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
             View Subjects →
           </Link>
         </section>
@@ -286,7 +287,7 @@ function AcademicsPage() {
           <p className="text-sm" style={{ color: "var(--muted)" }}>
             Australian | US | IB | British | Indian | International &amp; More
           </p>
-          <Link href="/academics/curriculum" className="inline-block mt-6 text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
+          <Link href="/#enquiry" className="inline-block mt-6 text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
             Explore Curriculum Support →
           </Link>
         </section>
@@ -298,7 +299,7 @@ function AcademicsPage() {
           <p className="text-sm" style={{ color: "var(--muted)" }}>
             HSC | UCAT | HAST | SAT | School Entrance | Scholarship Assessments | IELTS | PTE
           </p>
-          <Link href="/academics/exams" className="inline-block mt-6 text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
+          <Link href="/#enquiry" className="inline-block mt-6 text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
             Explore Exam &amp; Test Preparation →
           </Link>
         </section>
@@ -307,7 +308,7 @@ function AcademicsPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "var(--text)" }}>
             Understand. Unlock. Unleash.
           </h2>
-          <Link href="/how-it-works" className="text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
+          <Link href="/#enquiry" className="text-sm font-semibold" style={{ color: "var(--forest-light)" }}>
             How It Works →
           </Link>
         </section>
@@ -317,7 +318,7 @@ function AcademicsPage() {
             Let&apos;s start with where your child is now.
           </h2>
           <Link
-            href="/contact"
+            href="/#enquiry"
             className="inline-block px-8 py-3 rounded-xl font-semibold text-sm text-white"
             style={{ background: "linear-gradient(135deg, var(--forest-light), var(--forest))", boxShadow: "0 4px 20px rgba(46,139,87,0.35)" }}
           >
@@ -337,7 +338,7 @@ function SportsPage() {
       eyebrow="Sports"
       heading="Coaching and skill development across selected sports."
       subtext="1:1 & Small Group | Online & Face-to-Face"
-      primaryHref="/sports/coaching"
+      primaryHref="/#enquiry"
       primaryLabel="Explore Sports Coaching"
     >
       <CardGrid
@@ -358,7 +359,7 @@ function ArtsPage() {
       eyebrow="Arts"
       heading="Instrumental learning and musical development."
       subtext="1:1 & Small Group | Online & Face-to-Face"
-      primaryHref="/arts/coaching"
+      primaryHref="/#enquiry"
       primaryLabel="Explore Music Coaching"
     >
       <CardGrid
@@ -380,7 +381,7 @@ function TechPage() {
       eyebrow="Technology"
       heading="Technology and digital skills for today's learners."
       subtext="1:1 & Small Group | Online & Face-to-Face"
-      primaryHref="/tech/programmes"
+      primaryHref="/#enquiry"
       primaryLabel="Explore Technology Programmes"
     >
       <CardGrid
@@ -401,7 +402,7 @@ function LanguagesPage() {
       eyebrow="Languages"
       heading="English language and language proficiency support."
       subtext="1:1 & Small Group | Online & Face-to-Face"
-      primaryHref="/languages/programmes"
+      primaryHref="/#enquiry"
       primaryLabel="Explore Language Programmes"
     >
       <CardGrid

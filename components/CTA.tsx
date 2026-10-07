@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,17 +16,28 @@ export default function CTA() {
       .from(".cta-line", { y: 40, opacity: 0, duration: 0.7, stagger: 0.12, ease: "power3.out" }, "-=0.6")
       .from(".cta-btn", { y: 20, opacity: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }, "-=0.4");
 
-    document.querySelectorAll<HTMLElement>(".cta-btn").forEach(btn => {
-      btn.addEventListener("mousemove", (e: MouseEvent) => {
+    const btns = ref.current!.querySelectorAll<HTMLElement>(".cta-btn");
+    const cleanups: Array<() => void> = [];
+
+    btns.forEach((btn) => {
+      const onMove = (e: MouseEvent) => {
         const r = btn.getBoundingClientRect();
         const x = e.clientX - r.left - r.width / 2;
         const y = e.clientY - r.top - r.height / 2;
         gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.4, ease: "power2.out" });
-      });
-      btn.addEventListener("mouseleave", () => {
+      };
+      const onLeave = () => {
         gsap.to(btn, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1, 0.4)" });
+      };
+      btn.addEventListener("mousemove", onMove);
+      btn.addEventListener("mouseleave", onLeave);
+      cleanups.push(() => {
+        btn.removeEventListener("mousemove", onMove);
+        btn.removeEventListener("mouseleave", onLeave);
       });
     });
+
+    return () => cleanups.forEach((fn) => fn());
   }, { scope: ref });
 
   return (
@@ -54,14 +66,15 @@ export default function CTA() {
             Start Today
           </span>
           <h2 className="cta-line text-4xl md:text-6xl font-bold mb-5 leading-tight" style={{ color: "var(--text)" }}>
-            Your Dream Career<br />
-            <span className="text-gradient-indigo">Starts With One Click.</span>
+            Let&apos;s start with<br />
+            <span style={{ color: "var(--gold)" }}>where your child is now.</span>
           </h2>
           <p className="cta-line text-lg mb-12 max-w-lg mx-auto leading-relaxed" style={{ color: "var(--muted)" }}>
-            Join 50,000+ students already transforming their lives with CodeHub. Free to start, no credit card needed.
+            Tell us about your child&apos;s goals and we&apos;ll recommend the right starting point.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button
+            <Link
+              href="/#enquiry"
               className="cta-btn relative px-10 py-4 rounded-2xl font-bold text-base overflow-hidden group hoverable"
               style={{
                 background: "linear-gradient(135deg, var(--forest-light), var(--forest))",
@@ -69,18 +82,19 @@ export default function CTA() {
                 boxShadow: "0 8px 40px rgba(46,139,87,0.35)",
               }}
             >
-              <span className="relative z-10">Get Started Free →</span>
+              <span className="relative z-10">Start a Conversation →</span>
               <div
                 className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500"
                 style={{ background: "linear-gradient(90deg, rgba(212,175,55,0.2), transparent)" }}
               />
-            </button>
-            <button
+            </Link>
+            <Link
+              href="/#offer"
               className="cta-btn px-10 py-4 rounded-2xl font-bold text-base border transition-all duration-300 glass hoverable"
               style={{ color: "var(--muted)", borderColor: "rgba(46,139,87,0.25)" }}
             >
-              View All Courses
-            </button>
+              Explore What We Offer
+            </Link>
           </div>
         </div>
       </div>

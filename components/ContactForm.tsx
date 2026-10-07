@@ -36,11 +36,19 @@ export default function ContactForm() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const whatsappNumber = "+61401533346"; // Replace with your WhatsApp number
+    const whatsappNumber = "61401533346"; // sirf digits, + ke bina
 
-    const message = `New Enquiry:%0AStudent Name: ${formData.studentName}%0AEmail: ${formData.email}%0AParent Name: ${formData.parentName}%0AContact No: ${countryCode} ${formData.contactNo}`;
+    const phone = formData.contactNo.replace(/\D/g, "").replace(/^0+/, "");
 
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+    const message = [
+      "New Enquiry:",
+      `Student Name: ${formData.studentName}`,
+      `Email: ${formData.email}`,
+      `Parent Name: ${formData.parentName}`,
+      `Contact No: ${countryCode} ${phone}`,
+    ].join("\n");
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank");
   };
@@ -55,9 +63,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section
-      id="contact"
-      className="px-8 md:px-16 py-28 relative overflow-hidden"
+        <section
+      id="enquiry"
+      className="px-8 md:px-16 py-28 relative overflow-hidden scroll-mt-24"
       style={{ background: "var(--void)" }}
     >
       <div className="section-divider mb-20" />
@@ -93,7 +101,7 @@ export default function ContactForm() {
             Enquire <span className="text-gradient-indigo">Now</span>
           </h2>
           <p className="text-base mb-10 max-w-md leading-relaxed" style={{ color: "var(--muted)" }}>
-            Fill in the details below and we'll get back to you on WhatsApp instantly.
+            Fill in the details below and we&apos;ll get back to you on WhatsApp instantly.
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -133,7 +141,7 @@ export default function ContactForm() {
 
             <div>
               <label htmlFor="parentName" className="block text-sm font-medium mb-2" style={{ color: "var(--text)" }}>
-                Parent's Name
+                Parent&apos;s Name
               </label>
               <input
                 type="text"
@@ -174,7 +182,7 @@ export default function ContactForm() {
                   required
                   className={inputClass}
                   style={inputStyle}
-                  placeholder="10-digit mobile number"
+                  placeholder="Mobile number"
                 />
               </div>
             </div>

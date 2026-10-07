@@ -10,11 +10,13 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import WhatsAppPopup from "@/components/WhatsAppPopup";
+import HashScroll from "@/components/HashScroll";
 
 export default function Home() {
   return (
     <>
       <Cursor />
+      <HashScroll />
       <main className="min-h-screen overflow-x-hidden" style={{ background: "#050B1F" }}>
         <Navbar />
         <Hero />
