@@ -113,7 +113,7 @@ export default function Hero() {
             style={{ background: "rgba(212,175,55,0.15)", borderColor: "rgba(212,175,55,0.35)", backdropFilter: "blur(12px)" }}>
             <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "var(--gold)", boxShadow: "0 0 8px #D4AF37" }} />
             <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#F0DFA0" }}>
-              India's #1 Ed-Tech Platform
+              Australia's #1 Ed-Tech Platform
             </span>
           </div>
 
