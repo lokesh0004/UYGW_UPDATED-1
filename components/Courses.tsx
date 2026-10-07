@@ -93,6 +93,7 @@ export default function Courses() {
                       className="absolute inset-0 opacity-20"
                       style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "20px 20px" }}
                     />
+                    <span className="relative text-6xl">{c.emoji}</span>
                     {c.badge && (
                       <span className={`absolute top-3 left-3 ${c.badgeCls} text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider`}>
                         {c.badge}
@@ -100,28 +101,22 @@ export default function Courses() {
                     )}
                   </div>
                   <div className="p-5">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ background: c.color }}>
-                        {c.initials}
-                      </div>
-                      <span className="text-xs" style={{ color: "var(--muted)" }}>{c.instructor}</span>
+                    <div className="flex items-center mb-3">
                       <span
-                        className="ml-auto text-[10px] font-semibold px-2 py-0.5 rounded-full border"
+                        className="text-[10px] font-semibold px-2 py-0.5 rounded-full border"
                         style={{ color: "var(--forest-light)", background: "rgba(46,139,87,0.08)", borderColor: "rgba(46,139,87,0.2)" }}
                       >
                         {c.category}
                       </span>
                     </div>
                     <h3 className="text-base font-bold leading-snug mb-3" style={{ color: "var(--text)" }}>{c.title}</h3>
-                    <div className="flex gap-3 text-xs mb-4" style={{ color: "var(--muted)" }}>
-                      <span>{c.hours}h</span>
-                      <span>{c.lessons}</span>
-                    </div>
+                    <p className="text-xs leading-relaxed mb-4" style={{ color: "var(--muted)" }}>
+                      {c.reviews}
+                    </p>
                     <div className="flex items-center justify-between pt-3.5 border-t" style={{ borderColor: "rgba(46,139,87,0.15)" }}>
-                      <div className="flex items-center gap-1">
-                        <span className="text-sm" style={{ color: "var(--gold)" }}>{"★".repeat(c.rating)}</span>
-                        <span className="text-xs" style={{ color: "var(--muted)" }}>({c.reviews.toLocaleString()})</span>
-                      </div>
+                      <span className="text-xs font-semibold" style={{ color: "var(--forest-light)" }}>
+                        Explore →
+                      </span>
                     </div>
                   </div>
                 </div>
