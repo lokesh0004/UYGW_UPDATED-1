@@ -74,7 +74,7 @@ export default function Hero() {
   }, { scope: ref });
 
   const scrollToForm = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("enquiry")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -82,7 +82,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
           className="hero-video absolute inset-0 w-full h-full object-cover"
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          src="/hero-video.mp4"
           autoPlay loop muted playsInline
         />
       </div>
