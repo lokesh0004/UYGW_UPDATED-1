@@ -76,8 +76,8 @@ export default function Navbar() {
         <button
           className="px-5 py-2 text-sm font-medium transition-colors duration-200"
           style={{ color: "#C9D6CC" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "#C9D6CC")}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#9a8989")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "#256534")}
         >
           Log In
         </button>
