@@ -57,7 +57,7 @@ export default function Navbar() {
             <Link
               href={l.href}
               className="text-sm font-medium transition-colors duration-200 relative group"
-              style={{ color: "#C9D6CC" }}
+              style={{ color: "#000000" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#C9D6CC")}
             >
