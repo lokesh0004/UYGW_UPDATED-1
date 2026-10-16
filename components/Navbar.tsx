@@ -41,7 +41,7 @@ export default function Navbar() {
       {/* Logo */}
       <Link href="/" className="flex items-center">
         <Image
-          src="/logo.png"
+          src="/Logo.png"
           alt="UYGW Education"
           width={160}
           height={48}
