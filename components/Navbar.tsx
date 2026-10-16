@@ -36,7 +36,7 @@ export default function Navbar() {
     <nav
       ref={ref}
       className="fixed top-0 w-full z-50 flex items-center justify-between px-8 md:px-16 py-4 backdrop-blur-2xl border-b transition-all duration-300"
-      style={{ visibility: "hidden", background: "rgba(15,61,46,0.55)", borderColor: "rgba(212,175,55,0.15)" }}
+      style={{ visibility: "hidden", background: "rgba(188, 191, 190, 0.55)", borderColor: "rgba(206, 203, 195, 0.15)" }}
     >
       {/* Logo */}
       <Link href="/" className="flex items-center">
@@ -84,7 +84,7 @@ export default function Navbar() {
         <Link
           href="/#enquiry"
           className="relative px-5 py-2 rounded-xl text-sm font-semibold text-white overflow-hidden group"
-          style={{ background: "linear-gradient(135deg, #b2c0b8, #aab0ae)" }}
+          style={{ background: "linear-gradient(135deg, #b2c0b8, #608175)" }}
         >
           <span className="relative z-10">Contact Us</span>
           <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
