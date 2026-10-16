@@ -34,7 +34,7 @@ export default function Footer() {
             <span className="text-gradient-indigo">GW</span>
           </div>
           <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--muted)" }}>
-            Australia's most advanced online learning platform. Expert instructors. Real results.
+             Expert instructors. Real results.
           </p>
           <div className="flex gap-2">
             {["𝕏", "in", "▶", "📷"].map(icon => (
@@ -79,7 +79,7 @@ export default function Footer() {
       </div>
       <div className="section-divider mb-6" />
       <div className="flex flex-wrap justify-between items-center gap-3">
-        <p className="text-xs" style={{ color: "var(--muted)" }}>© 2026 UYGW. All rights reserved.</p>
+        <p className="text-xs" style={{ color: "var(--muted)" }}></p>
       </div>
     </footer>
   );

@@ -4,7 +4,7 @@ import Cursor from "@/components/Cursor";
 
 export const metadata: Metadata = {
   title: "CodeHub — Learn Without Limits",
-  description: "Australia's most advanced online learning platform.",
+  description: "",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -25,7 +25,6 @@ export default function Home() {
         <Testimonials />
         <Courses />
         <Features />
-        <Instructors />
         <ContactForm />
         <Footer />
       </main>

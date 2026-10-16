@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 
 const links = [
   { label: "Courses", href: "/#courses" },
   { label: "Instructors", href: "/#instructors" },
   { label: "Pricing", href: "/#pricing" },
-  { label: "About us", href: "/#About us" },
+  { label: "About us", href: "/#about" },
 ];
 
 export default function Navbar() {
@@ -20,10 +21,10 @@ export default function Navbar() {
     const onScroll = () => {
       if (!ref.current) return;
       if (window.scrollY > 30) {
-        ref.current.style.background = "rgba(15,61,46,0.95)";
-        ref.current.style.boxShadow = "0 1px 0 rgba(46,139,87,0.25), 0 8px 32px rgba(0,0,0,0.25)";
+        ref.current.style.background = "rgba(202, 213, 210, 0.95)";
+        ref.current.style.boxShadow = "0 1px 0 rgba(183, 192, 187, 0.25), 0 8px 32px rgba(192, 183, 183, 0.25)";
       } else {
-        ref.current.style.background = "rgba(15,61,46,0.55)";
+        ref.current.style.background = "rgba(191, 205, 201, 0.55)";
         ref.current.style.boxShadow = "none";
       }
     };
@@ -38,9 +39,15 @@ export default function Navbar() {
       style={{ visibility: "hidden", background: "rgba(15,61,46,0.55)", borderColor: "rgba(212,175,55,0.15)" }}
     >
       {/* Logo */}
-      <Link href="/" className="text-2xl font-bold tracking-tight">
-        <span className="text-white">UYGW</span>
-        <span style={{ color: "var(--gold)" }}>Education</span>
+      <Link href="/" className="flex items-center">
+        <Image
+          src="/logo.png"
+          alt="UYGW Education"
+          width={160}
+          height={48}
+          priority
+          className="h-10 md:h-12 w-auto"
+        />
       </Link>
 
       {/* Links */}
@@ -77,7 +84,7 @@ export default function Navbar() {
         <Link
           href="/#enquiry"
           className="relative px-5 py-2 rounded-xl text-sm font-semibold text-white overflow-hidden group"
-          style={{ background: "linear-gradient(135deg, #2E8B57, #165C44)" }}
+          style={{ background: "linear-gradient(135deg, #2E8B57, #608175)" }}
         >
           <span className="relative z-10">Contact Us</span>
           <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
