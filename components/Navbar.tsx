@@ -22,7 +22,7 @@ export default function Navbar() {
       if (!ref.current) return;
       if (window.scrollY > 30) {
         ref.current.style.background = "rgba(202, 213, 210, 0.95)";
-        ref.current.style.boxShadow = "0 1px 0 rgba(183, 192, 187, 0.25), 0 8px 32px rgba(192, 183, 183, 0.25)";
+        ref.current.style.boxShadow = "0 1px 0 rgba(253, 253, 253, 0.25), 0 8px 32px rgba(255, 254, 254, 0.25)";
       } else {
         ref.current.style.background = "rgba(191, 205, 201, 0.55)";
         ref.current.style.boxShadow = "none";
@@ -36,7 +36,7 @@ export default function Navbar() {
     <nav
       ref={ref}
       className="fixed top-0 w-full z-50 flex items-center justify-between px-8 md:px-16 py-4 backdrop-blur-2xl border-b transition-all duration-300"
-      style={{ visibility: "hidden", background: "rgba(188, 191, 190, 0.55)", borderColor: "rgba(206, 203, 195, 0.15)" }}
+      style={{ visibility: "hidden", background: "rgb(255, 255, 255)", borderColor: "rgba(184, 179, 166, 0.15)" }}
     >
       {/* Logo */}
       <Link href="/" className="flex items-center">
@@ -76,8 +76,8 @@ export default function Navbar() {
         <button
           className="px-5 py-2 text-sm font-medium transition-colors duration-200"
           style={{ color: "#C9D6CC" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#9a8989")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "#256534")}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#816868")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "#2c743d")}
         >
           Log In
         </button>
