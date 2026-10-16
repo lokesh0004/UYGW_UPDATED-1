@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
+import Image from "next/image";
 import { courses } from "@/data";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -89,13 +90,31 @@ export default function Courses() {
                     style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.6) 0%, transparent 60%)" }}
                   />
                   <div className={`h-48 bg-gradient-to-br ${c.grad} flex items-center justify-center relative overflow-hidden`}>
-                    <div
-                      className="absolute inset-0 opacity-20"
-                      style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "20px 20px" }}
-                    />
-                    <span className="relative text-6xl">{c.emoji}</span>
+                    {c.image ? (
+                      <>
+                        <Image
+                          src={c.image}
+                          alt={c.title}
+                          fill
+                          sizes="320px"
+                          className="object-cover"
+                        />
+                        <div
+                          className="absolute inset-0"
+                          style={{ background: "linear-gradient(180deg, transparent 50%, rgba(15,61,46,0.55) 100%)" }}
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <div
+                          className="absolute inset-0 opacity-20"
+                          style={{ backgroundImage: "radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)", backgroundSize: "20px 20px" }}
+                        />
+                        <span className="relative text-6xl">{c.emoji}</span>
+                      </>
+                    )}
                     {c.badge && (
-                      <span className={`absolute top-3 left-3 ${c.badgeCls} text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider`}>
+                      <span className={`absolute top-3 left-3 z-10 ${c.badgeCls} text-white text-[10px] font-bold px-2.5 py-1 rounded-lg uppercase tracking-wider`}>
                         {c.badge}
                       </span>
                     )}

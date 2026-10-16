@@ -1,9 +1,9 @@
 export const courses = [
-  { id:1, title:"Academics", emoji:"⚛️", grad:"from-indigo-600 to-indigo-900", badge:"Bestseller", badgeCls:"bg-indigo-500", reviews:"", category:"" },
-  { id:2, title:"Sports", emoji:"🤖", grad:"from-cyan-600 to-blue-900", badge:"Hot 🔥", badgeCls:"bg-red-500",reviews:"", category:"" },
-  { id:3, title:"Arts", emoji:"🎨", grad:"from-amber-500 to-orange-900", badge:"New", badgeCls:"bg-emerald-500", reviews:"", category:"" },
-  { id:4, title:"Tech", emoji:"☁️", grad:"from-orange-500 to-red-900", reviews:"", category:"" },
-  { id:5, title:"Languages", emoji:"📊", grad:"from-green-600 to-teal-900", badge:"Free", badgeCls:"bg-green-500", reviews:"", category:"" },
+{ id:1, title:"Academics", emoji:"⚛️",image:"/Academics.png", grad:"from-indigo-600 to-indigo-900", badge:"Bestseller", badgeCls:"bg-indigo-500", reviews:"", category:"" },
+  { id:2, title:"Sports", emoji:"🤖",image:"/Sports.jpeg", grad:"from-cyan-600 to-blue-900", badge:"Hot 🔥", badgeCls:"bg-red-500",reviews:"", category:"" },
+  { id:3, title:"Arts", emoji:"🎨",image:"/Arts.png", grad:"from-amber-500 to-orange-900", badge:"New", badgeCls:"bg-emerald-500", reviews:"", category:"" },
+  { id:4, title:"Tech", emoji:"☁️",image:"/Tech.png", grad:"from-orange-500 to-red-900", reviews:"", category:"" },
+  { id:5, title:"Languages", emoji:"📊",image:"/language.png", grad:"from-green-600 to-teal-900", badge:"Free", badgeCls:"bg-green-500", reviews:"", category:"" },
 ];
 
 export const instructors = [
