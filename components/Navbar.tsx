@@ -84,7 +84,7 @@ export default function Navbar() {
         <Link
           href="/#enquiry"
           className="relative px-5 py-2 rounded-xl text-sm font-semibold text-white overflow-hidden group"
-          style={{ background: "linear-gradient(135deg, #b2c0b8, #608175)" }}
+          style={{ background: "linear-gradient(135deg, #155230, #608175)" }}
         >
           <span className="relative z-10">Contact Us</span>
           <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
